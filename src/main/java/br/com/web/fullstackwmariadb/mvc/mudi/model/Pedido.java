@@ -2,7 +2,18 @@ package br.com.web.fullstackwmariadb.mvc.mudi.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Pedido {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String nomeProduto;
     private Double valorNegociado;
     private LocalDate dataEntrega;
