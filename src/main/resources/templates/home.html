@@ -47,10 +47,10 @@
                         <input class="form-control" th:value="${pedido.urlProduto}" value="url do produto" />
                     </div>
 
-                    <div>Descricao: <input class="form-control" th:text="${pedido.descricao}"></input></div>
+                    <div class="mb-3">Descricao: <input class="form-control" th:value="${pedido.descricao}"/></div>
                     <div>
                         <textarea class="form-control" th:text="${pedido.nomeProduto}"
-                    name="" id="" cols="30" >
+                    name="" id="" cols="30"  >
                     descricao do produto 
                     </textarea>
                     </div>
