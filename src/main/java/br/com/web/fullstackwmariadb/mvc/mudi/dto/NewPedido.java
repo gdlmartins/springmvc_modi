@@ -1,12 +1,18 @@
 package br.com.web.fullstackwmariadb.mvc.mudi.dto;
 
+import javax.validation.constraints.NotBlank;
+
 import br.com.web.fullstackwmariadb.mvc.mudi.model.Pedido;
 
 public class NewPedido {
 
+    @NotBlank
     private String produto;
+    @NotBlank
     private String urlProduto;
+    @NotBlank
     private String urlImage;
+
     private String descricao;
 
     public String getProduto() {

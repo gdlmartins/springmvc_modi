@@ -1,7 +1,10 @@
 package br.com.web.fullstackwmariadb.mvc.mudi.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,8 +24,11 @@ public class PedidoController {
         return "pedido/formulario";
     }
 
-    @PostMapping("/novo")
-    public String novo(NewPedido newPedido) {
+    @PostMapping("novo")
+    public String novo(@Valid NewPedido newPedido, BindingResult result) {
+        if (result.hasErrors()) {
+            return "pedido/formulario";
+        }
         Pedido pedido = newPedido.toPedido();
         pedidoRepository.save(pedido);
 
