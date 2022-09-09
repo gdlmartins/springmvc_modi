@@ -20,16 +20,19 @@ public class PedidoController {
     private PedidoRepository pedidoRepository;
 
     @GetMapping("formulario")
-    public String formulario() {
+    public String formulario(NewPedido newPedid) {
         return "pedido/formulario";
     }
 
     @PostMapping("novo")
     public String novo(@Valid NewPedido newPedido, BindingResult result) {
         if (result.hasErrors()) {
+            System.out.println("voltou");
             return "pedido/formulario";
         }
+
         Pedido pedido = newPedido.toPedido();
+
         pedidoRepository.save(pedido);
 
         return "pedido/formulario";

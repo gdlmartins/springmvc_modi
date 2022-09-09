@@ -5,7 +5,6 @@ import javax.validation.constraints.NotBlank;
 import br.com.web.fullstackwmariadb.mvc.mudi.model.Pedido;
 
 public class NewPedido {
-
     @NotBlank
     private String produto;
     @NotBlank
@@ -49,12 +48,12 @@ public class NewPedido {
 
     public Pedido toPedido() {
         Pedido pedido = new Pedido();
-        pedido.setDescricao(descricao);
-        pedido.setNomeProduto(produto);
-        pedido.setUrlImage(urlImage);
+        pedido.setDescricao(this.descricao);
+        pedido.setNomeProduto(this.produto);
+        pedido.setUrlImage(this.urlImage);
         pedido.setUrlProduto(urlProduto);
 
-        return new Pedido();
+        return pedido;
     }
 
 }
