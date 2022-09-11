@@ -24,19 +24,22 @@
             
           <div class="form-group">
             <label for="produto">Produto</label>
-            <input th:field="*{produto}"  class="form-control"  placeholder="Produto" />
+            <input th:field="*{produto}"  th:errorclass="is-invalid" class="form-control"  placeholder="Produto" />
             <small
             class="form-text text-muted">Informe qual o nome do produto.</small>
+            <div    class="invalid-feedback" th:errors="*{produto}">Erros do nome do produto.</div>
           </div>
           <div class="form-group">
             <label for="urlProduto">Url</label>
             <input
             th:field="*{urlProduto}"
+            th:errorclass="is-invalid"
               type="text"
               class="form-control"
          
               placeholder="Nome do produto"
             />
+            <div class="invalid-feedback" th:errors="*{urlProduto}">Erros da url do Produto</div>
             <small
             class="form-text text-muted"
               >Procure em um site o produto você deseja e cole url da pagina
@@ -47,13 +50,16 @@
             <label for="image">Image</label>
             <input 
             th:field="*{urlImage}"
+            th:errorclass="is-invalid"
             class="form-control"
             type="text" placeholder="Imagem" />
             <small
             class="form-text text-muted"
-              >Copie a url de uma boa imagem do produto e coloque aqui para
-              ajudar a conseguir compradores.</small
+            >Copie a url de uma boa imagem do produto e coloque aqui para
+            ajudar a conseguir compradores.</small
             >
+            <p 
+            class="invalid-feedback" th:errors="*{urlImage}">Erros da Imagem</p>
           </div>
           <div class="form-group mb-3">
             <label for="descricao">Descricao</label>
