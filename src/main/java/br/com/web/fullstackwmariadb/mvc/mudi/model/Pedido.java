@@ -3,6 +3,8 @@ package br.com.web.fullstackwmariadb.mvc.mudi.model;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,6 +22,17 @@ public class Pedido {
     private String urlProduto;
     private String urlImage;
     private String descricao;
+
+    @Enumerated(EnumType.STRING)
+    private StatusPedido status;
+
+    public StatusPedido getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusPedido status) {
+        this.status = status;
+    }
 
     public String getNomeProduto() {
         return nomeProduto;

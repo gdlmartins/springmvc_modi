@@ -5,7 +5,7 @@
 
   <body>
     <div >
-      <div th:replace="~{base::jumbotrom}">Novos Pedidos</div>
+      <div th:insert="~{base::jumbotrom('Novo Pedido')}">Novos Pedidos</div>
 
       <div class="card mt-3">
         <form th:object="${newPedido}"  class="card-body" action="/pedido/novo" method="post">

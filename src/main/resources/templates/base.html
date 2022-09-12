@@ -27,7 +27,8 @@
         <h1>mudi</h1>
         <span>Login</span>
     </div>
-    <div  th:fragment="jumbotrom"
+
+    <div  th:fragment="jumbotrom(title)"
     class="p-5 mb-0 bg-secondary bg-opacity-25 border  rounded-3">
-        <h1 class="display-4">Meus Pedidos</h1>
+        <h1 class="display-4" th:text="${title}">title</h1>
    </div>

@@ -3,6 +3,7 @@ package br.com.web.fullstackwmariadb.mvc.mudi.dto;
 import javax.validation.constraints.NotBlank;
 
 import br.com.web.fullstackwmariadb.mvc.mudi.model.Pedido;
+import br.com.web.fullstackwmariadb.mvc.mudi.model.StatusPedido;
 
 public class NewPedido {
     @NotBlank
@@ -52,6 +53,7 @@ public class NewPedido {
         pedido.setNomeProduto(this.produto);
         pedido.setUrlImage(this.urlImage);
         pedido.setUrlProduto(urlProduto);
+        pedido.setStatus(StatusPedido.AGUARDANDO);
 
         return pedido;
     }

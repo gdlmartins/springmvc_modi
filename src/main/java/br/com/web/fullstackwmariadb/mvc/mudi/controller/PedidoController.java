@@ -30,13 +30,9 @@ public class PedidoController {
             System.out.println("voltou");
             return "pedido/formulario";
         }
-
         Pedido pedido = newPedido.toPedido();
-
         pedidoRepository.save(pedido);
-
-        return "pedido/formulario";
-
+        return "redirect:/home";
     }
 
 }
